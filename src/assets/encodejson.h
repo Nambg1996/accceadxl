@@ -1,19 +1,24 @@
 #include <ArduinoJson.h>
 
 
-
 String jsonencodes() {
 
-    /* lib_deps =
-  bblanchon/ArduinoJson
-  Serial.println(jsonencodes());
-   */
+    GPS.upDate();
+    Lat = GPS.s_GNRMC.Latitude;
+    Lon = GPS.s_GNRMC.Longitude;
+    Utc = GPS.s_GNRMC.Utc;
+    Serial.println("testing GPS");
+
+    Serial.println(Lat);
+    Serial.println("end testing GPS");
 
   StaticJsonDocument<200> docs;
-  docs["value1"] = 1;
-  docs["valu2"] = 2;
-  docs["value3"] = 3;
-  docs["value4"] = 4;
+  docs["Lat"] = Lat;
+  docs["Lon"] = Lon;
+  docs["acceleration"] = adxlgetValue();
+  docs["time"] = Utc;
+  
+  
 
   String output;
   serializeJson(docs, output);

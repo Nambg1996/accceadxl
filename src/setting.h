@@ -1,8 +1,8 @@
 
 /* const char* ssid = "ASUKA5";
 const char* password = "2019kyohei2019"; */
- const char* ssid = "TC5";
-const char* password = "Goemon2019Goemon"; 
+ const char* ssid = "Connectify-me";
+const char* password = "xynoqeg2"; 
 const int port = 80;
 const int milidelay=50;
 const char* localhost = "192.168.161.126";
